@@ -10,15 +10,15 @@ end
 
 def shift_char(char, shifts)
   if char =~ /[a-z]/
-    gearbox(char, 'a', shifts)
+    shifter(char, 'a', shifts)
   elsif char =~ /[A-Z]/
-    gearbox(char, 'A', shifts)
+    shifter(char, 'A', shifts)
   else
     char
   end
 end
 
-def gearbox(char, base, shifts)
+def shifter(char, base, shifts)
   ((char.ord - base.ord + shifts) % 26 + base.ord).chr
 end
 
