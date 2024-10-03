@@ -10,12 +10,19 @@ end
 
 def shift_char(char, shifts)
   if char =~ /[a-z]/
-    ((char.ord - 'a'.ord + shifts) % 26 + 'a'.ord).chr
+    gearbox(char, 'a', shifts)
   elsif char =~ /[A-Z]/
-    ((char.ord - 'A'.ord + shifts) % 26 + 'A'.ord).chr
+    gearbox(char, 'A', shifts)
   else
     char
   end
 end
 
-puts cipher('Hello, Wolrd!', 3)
+def gearbox(char, base, shifts)
+  ((char.ord - base.ord + shifts) % 26 + base.ord).chr
+end
+
+puts cipher("Kf sv, fi efk kf sv: kyrk zj kyv hlvjkzfe:
+Nyvkyvi 'kzj efscvi ze kyv dzeu kf jlwwvi
+Kyv jczexj reu riifnj fw flkirxvflj wfiklev,
+Fi kf krbv ridj rxrzejk r jvr fw kiflscvj...", 9)
