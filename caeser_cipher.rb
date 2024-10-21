@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def cipher(str, shifter)
   new_str = ''
 
