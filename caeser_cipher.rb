@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 def cipher(str, shifter)
   new_str = ''
 
@@ -11,9 +9,9 @@ def cipher(str, shifter)
 end
 
 def shift_char(char, shifts)
-  if char =~ /[a-z]/
+  if /[a-z]/.match?(char)
     shifter(char, 'a', shifts)
-  elsif char =~ /[A-Z]/
+  elsif /[A-Z]/.match?(char)
     shifter(char, 'A', shifts)
   else
     char
@@ -21,7 +19,7 @@ def shift_char(char, shifts)
 end
 
 def shifter(char, base, shifts)
-  ((char.ord - base.ord + shifts) % 26 + base.ord).chr
+  (((char.ord - base.ord + shifts) % 26) + base.ord).chr
 end
 
 puts cipher("Kf sv, fi efk kf sv: kyrk zj kyv hlvjkzfe:
