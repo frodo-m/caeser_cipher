@@ -22,7 +22,9 @@ def shifter(char, base, shifts)
   (((char.ord - base.ord + shifts) % 26) + base.ord).chr
 end
 
-puts cipher("Kf sv, fi efk kf sv: kyrk zj kyv hlvjkzfe:
+quote = "Kf sv, fi efk kf sv: kyrk zj kyv hlvjkzfe:
 Nyvkyvi 'kzj efscvi ze kyv dzeu kf jlwwvi
 Kyv jczexj reu riifnj fw flkirxvflj wfiklev,
-Fi kf krbv ridj rxrzejk r jvr fw kiflscvj...", 9)
+Fi kf krbv ridj rxrzejk r jvr fw kiflscvj..."
+
+puts cipher(quote, 9)
